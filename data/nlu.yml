@@ -1,0 +1,580 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - Can you add 10 and 200?
+    - What is the current weather of Klang?
+    - What are the hidden gems in Malaysia?
+    - Could you give me a joke?
+    - What are the advice when travelling in Malaysia?
+    - askdjh asdasd lklasd lkffsd
+    - Where to buy laptop?
+    - What are the best place for me to coding?
+    -  akjdsl asdlja
+    - What is your favorite movie?
+    - What is the meaning of life?
+    - What is the capital of a country?    
+    - asd sdfkj aslkdfj
+
+- intent: ask_if_something_recyclable
+  examples: |
+    - I want to ask if something is recyclable    
+    - I wanna ask whether [plastic](material) [bag](item) is recyclable.
+    - I want to know whether my [mobile phone](item) is recyclable
+    - Could you tell me if my [mouse](item) is recyclable or not?    
+    - Could you tell me if the [water jug](item) is recyclable or not?
+    - Could you tell me if the [window](item) [glass](material) is recyclable or not?
+    - I would like to know whether [light bulb](item) is recyclable or not.
+    - I would like to know whether [metal](material) [utensil](item) is recyclable or not.
+    - Can [wooden](material) [table](item) be recycle?
+    - Can [microwave](item) be recycle?
+    - Can I recycle my [plastic](material) [water bottle](item)?
+    - Can I recycle [wire](item)?
+    - Can I recycle my [modem](item)?
+    - Is [t-shirt](item) recyclable?
+    - Is [book](item) always recyclable?
+    - Is [stainless-steel](material) [bottle](item) always recyclable?
+    - I am not sure if my [smart watch](item) is recyclable
+    - May I know is the [face mask](item) recyclable?
+    - May I know is the [plastic](material) [straw](item) recyclable?
+    - May I know is the [chair](item) always recyclable?
+    - May I know is the [glass](material) [water bottle](item) always recyclable?    
+
+- intent: ask_something_recyclable_location
+  examples: |
+    - where can I recycle it?
+    - recycling facilities near me
+    - where to recycle?
+    - places to recycle it
+    - Could you tell me if there is a recycling centre near me?
+    - I would like to know a place that can recycle it.
+    - I wanna ask where can I recycle [plastic bag](item).
+    - I want to know the nearest recycling centre for my [mobile phone](item)
+    - [table](item) recycling location
+    - Where can I recycle my [water bottle](item)?
+    - Places to recycle [t-shirt](item)
+    - I am not sure is there any place I can recycle my old [text book](item)
+    - May I know the places for me to recycle the [tin](item)?
+    - Location for recycle the [bulb](item)
+
+- intent: inform_location_postcode
+  examples: |
+    - [91780](postcode)    
+    - [53600](postcode)    
+    - [41200](postcode)    
+    - My location address is No9, Lorong Dato Abdul Hamid 47e, Taman Sentosa [51800](postcode), Klang, Selangor
+    - No9, Lorong Dato Abdul Hamid 47e, Taman Sentosa [63720](postcode), Klang, Selangor
+    - taman sentosa [33050](postcode) Klang, Selangor
+    - Technology Park Malaysia, [57000](postcode) Kuala Lumpur, Federal Territory of Kuala Lumpur
+    - B11-1-3 Megan Salak Park, Jalan 1/125e, Desa Petaling, [57100](postcode) Kuala Lumpur
+    - My address is 57, Jalan Putra 1, Taman Sri Putra, [81200](postcode) Johor Bahru, Johor
+    - 1516, Jalan Nasiman, Batu 18, Kampung Sungai Tiram, [81800](postcode) Ulu Tiram, Johor
+    - Locations: Awana Hotel Resorts World Genting, [69000](postcode) Genting Highlands, Pahang
+    - Jln Parameswara, Banda Hilir, [78000](postcode) Alor Gajah, Melaka
+    - Jalan Dato A.S Dawood, Seremban, [70100](postcode) Seremban, Negeri Sembilan
+    - My currect location address is 75, Jalan Panglima, [30000](postcode) Ipoh, Perak
+    - 45, Lebuh Kimberley, George Town, [10100](postcode) George Town, Pulau Pinang
+    - Bandar Alor Setar, [05000](postcode) Alor Setar, Kedah
+    - 1, Jalan Hamzah, Bandar Kota Bharu, [15050](postcode) Kota Bharu, Kelantan
+    - NO. 123, Jalan Kampung Cina, Kampung Banggul, [20100](postcode) Kuala Terengganu, Terengganu
+    - Kompleks jps perlis,pengkalam asam,01000, [01000](postcode) Kangar, Perlis
+
+- intent: faq/what_is_recycling
+  examples: |
+    - What is recycling?
+    - What the recycling exactly is?
+    - Do you know what is recycling?
+    - Do you know something about recycling?
+    - Could you tell what recycling is?
+    - I dont know what is recycling
+    - What the hell is recycling?
+    - How does recycling work?
+
+- intent: faq/why_recycling
+  examples: |
+    - Why we need recycling?
+    - Why do we need to recycle?
+    - Why should I recycle?
+    - Why is recycling important?
+    - Do you know the importance of recycling?
+    - Convince me to do recycling
+    - Try persuade me to participate in recycling
+
+- intent: faq/recycling_benefits
+  examples: |
+    - Is recycling truly beneficial for the environment?
+    - Does recycling do more harm than good?
+    - Why is it important to recycle?
+    - Is recycling benefits to world?
+    - What is the benefits of recycling?
+
+- intent: faq/recycling_facts
+  examples: |
+    - Things we dont know about recycling
+    - What are the facts of recycling?
+    - Facts that most of the people dont know about recycling
+    - Recycling facts
+
+- intent: faq/how_recycling_save_energy
+  examples: |
+    - How does recycling save energy?
+    - Is recycling save energy true? how it is?
+
+- intent: faq/recycling_unmatched_reason
+  examples: |
+    - Why are some items that look recyclable not accepted at my recycling facility?
+    - Aluminium is recyclable but some recycling centre doesnt accept it, why?
+
+- intent: faq/recycling_bin_unaccepted_things
+  examples: |
+    - What should I never put in my recycling bin(s)?
+    - Things that people wrongly put into the recycling bin
+    - What are the things do not accepted by recycling bin
+    - What are some items I should never put in my recycle bin(s)?
+    - What ought to never be disposed of in my recycle bin(s)?
+    - Misplaced items that people put in the recycle bin
+    
+- intent: faq/recycling_bin_common_accepted_items
+  examples: |
+    - What are the most common items that I can put into my curbside recycling bin?
+    - What kinds of things are the most typical ones I can put in my curbside recycling bin?
+    - Which things may I put in my curbside recycling container that are most often used?
+    - Things that can be put it regular recycling bin
+    - Item that can be throw into common curbside recycling bin
+
+- intent: faq/curbside_recycling_bin_unaccepted_always
+  examples: |
+    - What are recyclable items that I cant put in my curbside recycling bin?
+    - What recyclable products am I not allowed to put in my curbside recycling bin?
+
+- intent: faq/everything_into_recycling_bin_consequences
+  examples: |
+    - What happens when you put everything into one recycling bin?
+    - What are the consequences if people throw everything into one recycling bin?
+    - The effects of throwing things into recycling bin without classified it
+
+- intent: faq/why_food_catainer_cant_recycle
+  examples: |
+    - Why can't food containers be recycled?
+    - Why Some of Our Recycled Food Containers Aren't Actually Being Recycled?
+
+- intent: faq/chasing_arrow_misconception
+  examples: |
+    - Item with chasing arrow icon bottom or back can be recycle, is it true?
+    - Is all the item with recycling symbol be recycled?
+    - I can put all the item with recycling symbol into recycling bin
+    - Why we cant throw all the item with chasing arrow into recycling bin?
+    - The plastic has a recycling symbol! Is it recyclable?
+    - Does the recycling symbol mean it can be recycled?
+    - Why aren't all items with the recycle symbol recyclable?
+
+- intent: tip/general
+  examples: |
+    - Flatten boxes before recycling them
+    - Remove all food and liquid from containers
+    - Throw your recycling in loose, instead of in a plastic bag (as plastic bags cannot be recycled)
+    - Check it before you chuck it to make sure the ARL matches the bin you are putting it in    
+    - Make sure you rinsed and dried aluminum and glass containers before recycling
+    - Buy product with less packaging
+    - Commodities that last longer should be bought because they are well assembled and they offer one a guarantee that they will stay longer. Due to their long lasting duration, one will save money and they will also spare Landfill space
+    - Make use of the same item but in different ways. For instance, a microwave supper plate can be used as an excursion dish
+    - Use resalable partitions rather than the plastic wrap
+    - Make use of the clay espresso mug rather than paper glass
+    - Recycle staple sacks or bring your own specific material packs to the store. Do not take a pack an extra pack from the store unless a need arises
+    - You should consider buying recycled item, and even for a step further to inquire for them through sales administrators or other people
+    - Take a look at various accumulation area and pickup services to apprehend what they acknowledge and start collecting waste
+    - When purchasing materials for office use, you should consider procuring reused materials
+
+- intent: tip/handling_broken_glass
+  examples: |
+    - How can I recycle broken glass?
+    - Recycle broken glass
+    - How to handle broken glass
+    - Should I recycle broken glass or dispose it?
+
+- intent: tip/handling_old_garden_hose
+  examples: |
+    - How can I recycle old garden hose?
+    - Recycle old garden hose
+    - How to handle old garden hose
+    - Should I recycle old garden hose or dispose it?
+
+# Lookup table
+- lookup: material
+  examples : |
+    - plastic
+    - paper
+    - metal
+    - glass
+
+- lookup: item
+  examples : |
+    - bag
+    - wine bottle
+    - liquor bottle
+    - chair
+    - table        
+    - battery    
+    - charger
+    - wire
+    - cord
+    - oven
+    - microwave    
+    - cupboard
+    - clothes
+    - face mask
+    - kettle
+    - cutlery    
+    - hat
+    - book
+    - milk container
+    - monitor
+    - bottle    
+    - water jug
+    - window
+    - carpet
+    - pillow
+    - mattress
+    - modem   
+    - keyboard
+    - pendrive
+    - cd
+    - wallet
+    - food container
+    - food packaging
+    - cooking oil
+    - bowl
+    - plate    
+
+# material
+- synonym: metal
+  examples: |
+    - iron
+    - aluminium
+    - steel
+    - stainless-steel
+    - metal    
+    - stainless steel
+
+- synonym: wooden
+  examples: |
+    - wooden
+    - paper
+    - wood
+
+- synonym: ink catridge
+  examples: |
+    - catridge
+    - catridge printer
+    - ink catridge
+    - empty ink catridge    
+
+# item
+- synonym: hhw
+  examples: |
+    - motor oil
+    - paint
+    - solvent
+    - pesticide
+    - household cleaner    
+    - gas tank
+    - drain opener
+    - polish
+    - mothball
+    - deodorizer
+    - incandescent lamp
+    - compact fluorescent lamp
+    - CFL bulb 
+
+- synonym: bottle
+  examples: |
+    - water bottle
+    - bottle
+    - drinking bottle
+    - flask
+    - thermos
+    - vacuum bottle
+
+- synonym: phone
+  examples: |
+    - phone
+    - smartphone
+    - cellphone
+    - cell phone
+    - handphone
+    - hand phone
+    - telephone
+    - mobile phone
+    
+- synonym: computer
+  examples: |
+    - notebook
+    - laptop computer
+    - computer notebook
+    - laptop
+    - notebook computer
+    - minicomputer
+    - computer
+
+- synonym: clothes
+  examples: |
+    - clothes
+    - clothing
+    - dress
+    - fabric
+    - textile
+    - t-shirt
+    - shirt
+    - pants
+    - short pants
+    - underwear
+    - towel
+
+- synonym: television
+  examples: |
+    - television
+    - tv
+    - telly
+
+- synonym: light bulb
+  examples: |
+    - light bulb
+    - bulb
+    - lamp
+    - light    
+    - torch light
+    - torch    
+    - fluorescent lamp
+    - fluorescent tube
+    - lightbulb
+    - electric light
+
+- synonym: watch
+  examples: |
+    - smartwatch
+    - digital watch 
+
+- synonym: face mask
+  examples: |
+    - mask
+    - facemask
+    - face mask
+    - facial mask
+    - surgical mask
+
+- synonym: book
+  examples: |
+    - book
+    - story book
+    - storybook
+    - exercise book
+    - text book
+    - textbook
+    - note book
+
+- synonym: drug
+  examples: |
+    - drug
+    - medicine
+    - supplement
+    - pill
+
+- synonym: battery
+  examples: |
+    - batteries
+    - cell    
+    - lead-acid automotive batteries
+    - lithium-ion batteries
+    - li-ion batteries
+    - AA battery
+    - AAA battery
+    - camcoder battery
+
+- synonym: modem
+  examples: |
+    - modem
+    - router
+    - projector
+
+- synonym: disc
+  examples: |
+    - cd
+    - compact disc
+    - disc
+    - optical disc
+    - digital optical disc
+    - dvd
+    - digital versatile disc
+
+- synonym: food container
+  examples: |
+    - bento box
+    - baggie
+    - bread bin    
+    - oily grazer box
+    - paper plate    
+    
+- synonym: cooking oil
+  examples: |
+    - used cooking oil
+    - cooking oil
+
+- synonym: floor mat
+  examples: |
+    - floor mat
+    - carpet
+
+- synonym: food waste
+  examples: |
+    - food waste
+    - plate waste
+    - spoiled food
+    - peels
+    - rinds
+
+- synonym: food donation
+  examples: |
+    - peanut butter
+    - canned bean
+    - canned chicken
+    - canned fish
+    - canned meat
+    - canned soup
+    - canned fruit
+    - canned vegetable
+    - nut
+    - cracker
+    - pasta
+    - rice
+    - egg
+    - canned food
+    - dry food
+    - flour
+    - instant noodle
+    - biscuit
+    - sugar
+    - salt
+    - beehoon
+    - potato
+    - flour
+    - cereal
+
+- synonym: utensil
+  examples: |
+    - utensil
+    - cutlery
+    - straw
+    - plastic straw
+    - fork
+    - wooden fork
+    - plastic fork
+    - spoon
+    - wooden spoon
+    - plastic spoon
+    - measuring spoon
+    - measuring cup
+    - peeler
+    - fish turner
+    - whisk
+    - tongs
+    - knife
+
+- synonym: receipt
+  examples: |
+    - receipt    
+    - voucher
+    - invoice    
+    - statement
+    - coupon
+    - slip
+    - certificate

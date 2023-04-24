@@ -1,0 +1,163 @@
+version: "3.1"
+
+entities:
+  - item
+  - material
+  - postcode
+
+slots:
+  item:
+    type: text
+    influence_conversation: true 
+    mappings:
+      - type: from_entity 
+        entity: item
+  material:
+    type: text
+    influence_conversation: true 
+    mappings:
+      - type: from_entity 
+        entity: material
+  postcode:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: postcode
+
+forms:
+  item_form:
+    required_slots:
+    - item
+  material_form:
+    required_slots:
+    - material    
+  location_form:
+    required_slots:
+    - item
+    - postcode
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_if_something_recyclable
+  - ask_something_recyclable_location
+  - inform_location_postcode
+  - out_of_scope
+  - faq
+  - tip
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot to clear your doubts on recycling, powered by Rasa."  
+
+  utter_out_of_scope:
+  - text: "I can't understand what you trying to ask me to do.."
+  - text: "I dont know if I can do that"
+
+  utter_ask_item:
+  - text: "What is the item you want to recycle?"
+  - text: "What are you going to recycle?"
+
+  utter_ask_material:
+  - text: "What is it made by?"
+  - text: "What is the material of it?"
+
+  utter_ask_postcode:
+  - text: "Give me your address postcode to provide neareast location for you"
+  
+  utter_faq/what_is_recycling:
+  - text: Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash and turning them into new products. Recycling can benefit your community, the economy and the environment
+  - text: There are 3 components of the recycling process which is collection, manufacturing and buying. Collection involves separating materials from the waste stream and preparing them to become raw materials, while manufacturing involves using recycled materials instead of virgin raw materials. Buying is necessary to close the loop and make recycling economically viable.
+  
+  utter_faq/why_recycling:
+  - text: Recycling is important and it should be practiced by humans, as it reduces the need for extracting (mining, quarrying and logging), refining and processing raw materials all of which create substantial air and water pollution. As recycling saves energy it also reduces greenhouse gas emissions, which helps to tackle climate change.
+  - text: Because it reduces the amount of waste sent to landfills and incinerators. Conserves natural resources such as timber, water and minerals. Prevents pollution and reduces greenhouse gases by reducing the need to mine and process new raw materials.
+  
+  utter_faq/recycling_benefits:
+  - text: It helps in protection of ecosystem and wildlife, as it will reduces the need to grow, harvest and extract raw materials from the Earth
+  - text: It reduces waste sent to landfills and incinerators
+  - text: It can prevent the pollution made to the world such as toxic chemicals and greenhouse gases released from landfills
+  - text: Recycling can also conserve energy which eliminates significant extent of energy to process the material from scratch
+  - text: Recycling in another way also clean our environment
+  - text: Recycling also strengthen economy by creating jobs thence it decrease the unemployment rate
+  
+  utter_faq/recycling_facts:
+  - text: Dirty plastics cannot be recycled
+  - text: Enough plastic bottles are discarded over a year to go around the planet 4 times
+  - text: More than 90% of our ocean plastics come from just 10 rivers
+  - text: The largest dumping site of plastics is not a landfill, it is the pacific ocean!
+  - text: People recycling habits are flawed
+  - text: The numbers on plastics don't tell you if it's recyclable
+  - text: Where you live really determines what's 'recyclable' as for example, aluminum are recycled in some cities and not others.
+  - text: There are some general recycling rules
+  - text: Rigid plastic is more likely to be recycled than thin plastic film, and items that are a mix of different materials are less likely to be.
+  - text: Packaging is particularly problematic as most of it cant be recycled
+  - text: Cities struggle with contaminated recycling bins
+  - text: Recycling is the least preferred of the 3Rs. In terms of what's more sustainable, recycling actually comes in last out of the 3Rs
+  
+  utter_faq/how_recycling_save_energy:
+  - text: When we make new products out of virgin materials, we expend energy to extract and process those materials. This includes burning fossil fuels. However, if we manufacture products using recycled materials, we reduce the need for virgin materials and save the energy required to extract and process them.
+  
+  utter_faq/recycling_unmatched_reason:
+  - text: Your local recycling facility might not accept all recyclable items. This is especially true with plastics. While plastic bottles are the most commonly recycled plastic products, other plastics may or may not be accepted in your area, so first check what your local recycling provider accepts. It is important to understand that the existence of a plastic resin code on the product does not guarantee that the product is recyclable in your area. Additionally, glass may not be accepted in some areas, so please confirm with your local provider
+  
+  utter_faq/recycling_bin_unaccepted_things:
+  - text: Garden hoses, sewing needles, bowling balls, food or soiled-food paper, propane tanks or cylinders, aerosol cans that aren't empty, household hazardous waste(like pesticides, certain type of batteries, petrol and kerosene), broken glass, broken light bulb and syringes are the common item people wrongly put into recycling bin
+  
+  utter_faq/recycling_bin_common_accepted_items:
+  - text: 'The most common things are: cardboard, paper, food boxes, mail, beverage can, glass bottles, jars(plastic and glass), jugs, plastic bottles and cups'
+  
+  utter_faq/curbside_recycling_bin_unaccepted_always:
+  - text: Generally, plastic bags and wraps, electronics, and textiles cannot go in a curbside recycling bin. Please check with your local recycling provider first.
+  
+  utter_faq/everything_into_recycling_bin_consequences:
+  - text: You might think you're helping the environment when you start tossing everything into your recycling bin willy nilly, but you might be causing more harm than good. Take, for instance, an unwashed pasta sauce jar. It could potentially contaminate sought-after items, like paper and cardboard.
+  - text: Putting items in the recycling bin that can't be recycled can contaminate the recycling stream. After these unrecyclable items arrive at recycling centers, they can cause costly damage to the equipment
+  
+  utter_faq/why_food_catainer_cant_recycle:
+  - text: You may think that a bit of contamination won't do any harm, but it can ruin a new product - meaning that the resources used to recycle in the first place are wasted.
+  
+  utter_faq/chasing_arrow_misconception:
+  - text: Just because a takeout container has a chasing arrows symbol on it, doesn't mean it's recyclable. In fact, despite common misconception, the symbol indicates the type of plastic not that it can be recycled. There are a total of seven resin codes and each number signifies a different category of plastics.
+
+  utter_tip/handling_broken_glass:
+  - text: Most broken glass are not always recyclable, so make sure you wrap it in several pieces of newspaper or put it in a box before you throw into a bin in order not to injuring the workers
+
+  utter_tip/handling_old_garden_hose:
+  - text: "You can't recycle it, but you can reuse it by several methods from following website: https://recyclingpartnership.org/communitiesforrecycling/old-garden-hose-tip-dont-recycle/"
+
+  utter_tip/general:
+  - text: Give me some tips on recycling
+  - text: could you advise me some tips on recycling
+  - text: What advice would you give based on recycling
+  - text: What tips would you give to people want to recycle?  
+
+actions:
+  - action_ask_if_something_recyclable
+  - action_ask_something_recyclable_location
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
