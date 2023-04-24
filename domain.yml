@@ -53,6 +53,9 @@ intents:
   - tip
 
 responses:
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+
   utter_greet:
   - text: "Hey! How are you?"
 
