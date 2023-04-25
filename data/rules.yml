@@ -40,5 +40,5 @@ rules:
 
 - rule: giving tips
   steps:
-  - intent: faq
-  - action: utter_faq
+  - intent: tip
+  - action: utter_tip

@@ -101,12 +101,12 @@ class ActionAskIfSomethingRecyclable(Action):
             dispatcher.utter_message(text='There are few different material of this item')
             for i in item_list:
                 message = f"{i['material_name']} {i['item_name']} is{'' if i['is_recyclable'] else 'not'} recyclable".capitalize()
-                dispatcher.utter_message(text=message)
-            return []
+                dispatcher.utter_message(text=message)            
         else:
             item_dict = item_list[0]            
             message = "Yes, it is recyclable" if item_dict["is_recyclable"] else "No, it is not recyclable"
-            return dispatcher.utter_message(text=message)        
+            dispatcher.utter_message(text=message)        
+        return True
         
 
 class ActionAskSomethingRecyclableLocation(Action):
@@ -147,4 +147,5 @@ class ActionAskSomethingRecyclableLocation(Action):
             dispatcher.utter_message(text=message)
         
         message = f"Dont have any nearby location for recycling {item}"
-        return dispatcher.utter_message(text=message)
+        dispatcher.utter_message(text=message)
+        return True

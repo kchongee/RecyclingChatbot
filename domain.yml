@@ -152,10 +152,21 @@ responses:
   - text: "You can't recycle it, but you can reuse it by several methods from following website: https://recyclingpartnership.org/communitiesforrecycling/old-garden-hose-tip-dont-recycle/"
 
   utter_tip/general:
-  - text: Give me some tips on recycling
-  - text: could you advise me some tips on recycling
-  - text: What advice would you give based on recycling
-  - text: What tips would you give to people want to recycle?  
+  - text: Flatten boxes before recycling them
+  - text: Remove all food and liquid from containers
+  - text: Throw your recycling in loose, instead of in a plastic bag (as plastic bags cannot be recycled)
+  - text: Check it before you chuck it to make sure the ARL matches the bin you are putting it in    
+  - text: Make sure you rinsed and dried aluminum and glass containers before recycling
+  - text: Buy product with less packaging
+  - text: Commodities that last longer should be bought because they are well assembled and they offer one a guarantee that they will stay longer. Due to their long lasting duration, one will save money and they will also spare Landfill space
+  - text: Make use of the same item but in different ways. For instance, a microwave supper plate can be used as an excursion dish
+  - text: Use resalable partitions rather than the plastic wrap
+  - text: Make use of the clay espresso mug rather than paper glass
+  - text: Recycle staple sacks or bring your own specific material packs to the store. Do not take a pack an extra pack from the store unless a need arises
+  - text: You should consider buying recycled item, and even for a step further to inquire for them through sales administrators or other people
+  - text: Take a look at various accumulation area and pickup services to apprehend what they acknowledge and start collecting waste
+  - text: When purchasing materials for office use, you should consider procuring reused materials
+  
 
 actions:
   - action_ask_if_something_recyclable
