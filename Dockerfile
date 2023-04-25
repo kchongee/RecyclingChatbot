@@ -1,7 +1,14 @@
-FROM rasa/rasa
-ENV BOT_ENV=production
-COPY . /var/www
-WORKDIR /var/www
-RUN pip install -r requirements.txt
-RUN rasa train
-ENTRYPOINT [ "rasa", "run", "-p", "8080"]
+FROM python:3.9-bullseye
+
+RUN python -m pip install rasa
+
+WORKDIR /app
+COPY . .
+
+RUN rasa train nlu
+
+USER 1001
+
+ENTRYPOINT [ "rasa"]
+
+CMD [ "run", "--enable-api", "--port", "8080" ]

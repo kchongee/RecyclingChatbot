@@ -1,0 +1,7 @@
+tests/*
+models/*
+actions/*
+**/*.md
+venv
+.rasa
+.pytest_cache
